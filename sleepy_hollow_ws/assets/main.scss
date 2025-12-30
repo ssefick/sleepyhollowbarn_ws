@@ -4,327 +4,245 @@
 
 @use "sass:color";
 
-// BRAND IDENTITY - Update these hex codes to change the entire site
-$brand-green: #54787c;  // Deep Forest Green
-$brand-gold:  #b59a5d;  // Signature Gold Accent
-$cream-white: #fcfbf8;  // Soft background color
+$brand-green: #54787c;
+$brand-gold:  #b59a5d;
+$cream-white: #fcfbf8;
 $pure-white:  #ffffff;
 
-// TYPOGRAPHY
 $serif-font: 'Playfair Display', serif;
 $sans-font:  'Lato', sans-serif;
 
-// 1. GLOBAL RESET
 body, html {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   background-color: $cream-white;
   font-family: $sans-font;
-  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
-// 2. HEADER & NAVIGATION
 .site-header {
-  nav {
-    background-color: $brand-green;
-    border-bottom: 4px solid $brand-gold;
-    padding: 12px 0;
+  nav { background-color: $brand-green; border-bottom: 4px solid $brand-gold; padding: 12px 0; }
+  .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+  .logo-area img { height: 70px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 30px; 
+    a { color: $pure-white; text-decoration: none; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s ease;
+      &:hover { color: $brand-gold; }
+    }
   }
+}
 
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-  }
+.site-footer {
+  background-color: $brand-green; border-top: 5px solid $brand-gold; color: $pure-white; padding: 60px 20px; text-align: center;
+  h2 { font-family: $serif-font; margin-bottom: 10px; }
+  p { opacity: 0.8; letter-spacing: 1px; margin: 5px 0; }
+}
 
-  .logo-area img {
-    height: 70px; // Standardized height for your retina logo
-    width: auto;
-    display: block;
-  }
+.hero-section {
+  height: 80vh; background: url('/assets/img/hero_barn.webp') no-repeat center center; background-size: cover; position: relative; display: flex; align-items: center; justify-content: center;
+}
+.hero-overlay { background: rgba(35, 49, 35, 0.4); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.hero-content { text-align: center; color: #fff;
+  h1 { font-family: $serif-font; font-size: 3.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+  p { font-size: 1.2rem; letter-spacing: 1px; }
+}
 
-  .nav-links {
+.btn-gold {
+  display: inline-block; background-color: $brand-gold; color: white; padding: 15px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 25px; transition: all 0.3s ease;
+  &:hover { opacity: 0.85; transform: translateY(-2px); }
+}
+
+.btn-gold-large {
+  display: inline-flex; align-items: center; justify-content: center; background-color: $brand-gold; color: white !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; transition: all 0.3s ease; border-radius: 2px; border: none;
+  i { margin-right: 12px; font-size: 1.2rem; }
+  &:hover { opacity: 0.9; transform: scale(1.05); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+}
+
+.intro-section { padding: 80px 20px; text-align: center; .container { max-width: 800px; margin: 0 auto; } h2 { font-family: $serif-font; font-size: 2.5rem; color: $brand-green; } p { font-size: 1.15rem; line-height: 1.8; color: #555; } }
+
+.footer-cta-section { background-color: $brand-green; padding: 100px 20px; text-align: center; color: $pure-white; }
+.footer-cta-heading { font-family: $serif-font; color: $brand-gold; font-size: 2.8rem; margin: 0 0 20px 0; }
+.footer-cta-button { display: inline-block; background-color: $brand-gold; color: $pure-white !important; padding: 20px 45px; text-decoration: none; font-family: $sans-font; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; transition: all 0.3s ease; border-radius: 2px;
+    &:hover { opacity: 0.9; transform: scale(1.03); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+}
+
+.contact-section { padding: 80px 20px; .container { max-width: 1100px; margin: 0 auto; } }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; @media (max-width: 768px) { grid-template-columns: 1fr; } }
+.venue-form { display: flex; flex-direction: column; gap: 15px;
+  .form-row { display: flex; gap: 15px; @media (max-width: 480px) { flex-direction: column; } }
+  input, select, textarea { width: 100%; padding: 12px 15px; border: 1px solid #ddd; font-family: $sans-font; &:focus { outline: none; border-color: $brand-gold; } }
+}
+
+.social-links { margin-top: 25px; display: flex; justify-content: center; gap: 25px;
+  a { color: $brand-gold; font-size: 1.5rem; transition: all 0.3s ease; text-decoration: none; &:hover { color: $pure-white; transform: translateY(-3px); } }
+}
+.page-header-banner { background-color: $brand-green; border-bottom: 4px solid $brand-gold; padding: 60px 20px; text-align: center; color: $pure-white; h1 { font-family: $serif-font; font-size: 3rem; margin: 0; } }
+
+/* --- PRICING PAGE STYLES --- */
+
+.pricing-hero {
+  height: 40vh !important;
+  min-height: 300px;
+}
+
+.pricing-details {
+  padding: 80px 20px;
+  background-color: $cream-white;
+
+  .pricing-grid {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    a {
-      color: $pure-white;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 2px;
+  .pricing-card {
+    flex: 1;
+    min-width: 320px;
+    background: $pure-white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid color.adjust($cream-white, $lightness: -5%);
+
+    .price-label {
+      color: $brand-gold;
       text-transform: uppercase;
-      transition: color 0.3s ease;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
 
-      &:hover {
-        color: $brand-gold;
+    .package-name {
+      margin: 0 0 20px 0;
+      font-family: $serif-font;
+      font-size: 2.2rem;
+      color: $brand-green;
+    }
+
+    .package-description {
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .package-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+        color: #444;
+        
+        &::before {
+          content: "✓";
+          position: absolute;
+          left: 0;
+          color: $brand-gold;
+        }
       }
     }
   }
 }
 
-// 3. FOOTER
-.site-footer {
+.included-shared {
+  max-width: 900px;
+  margin: 0 auto;
+  background: color.adjust($cream-white, $lightness: -3%);
+  padding: 30px;
+  border-top: 4px solid $brand-gold;
+
+  h3 {
+    font-family: $serif-font;
+    text-align: center;
+    margin-bottom: 20px;
+    color: $brand-green;
+  }
+
+  .shared-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .shared-item {
+    text-align: center;
+    font-weight: bold;
+    color: $brand-green;
+  }
+}
+
+.amenities-section {
   background-color: $brand-green;
-  border-top: 5px solid $brand-gold;
+  padding: 80px 20px;
   color: $pure-white;
-  padding: 60px 20px;
-  text-align: center;
 
-  h2 { font-family: $serif-font; margin-bottom: 10px; }
-  p { opacity: 0.8; letter-spacing: 1px; margin: 5px 0; }
-}
-
-// HERO STYLES
-.hero-section {
-  height: 80vh; // Occupies 80% of the screen height
-  background: url('/assets/img/hero_barn.webp') no-repeat center center;
-  background-size: cover;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-overlay {
-  background: rgba(35, 49, 35, 0.4); // Subtle green tint over the photo
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
-  text-align: center;
-  color: #fff;
-  h1 { 
-    font-family: 'Playfair Display', serif; 
-    font-size: 3.5rem; 
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  }
-  p { font-size: 1.2rem; letter-spacing: 1px; }
-}
-
-// BUTTONS
-.btn-gold {
-  display: inline-block;
-  background-color: $brand-gold;
-  color: white;
-  padding: 15px 35px;
-  text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 25px;
-  transition: background 0.3s;
-
-  &:hover {
-      opacity: 0.85;       // Makes the button slightly transparent/lighter on hover
-      transform: translateY(-2px); // Gives a nice subtle "lift" effect
+  .section-heading {
+    color: $brand-gold;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: $serif-font;
+    font-size: 2.5rem;
   }
 
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    ul { list-style: none; padding: 0; margin: 0; display: contents; }
+    
+    li { 
+      background: rgba(255,255,255,0.08); 
+      padding: 20px; 
+      border-radius: 2px;
+      line-height: 1.6;
+
+      strong { 
+        color: $brand-gold; 
+        display: block; 
+        margin-bottom: 5px; 
+        font-size: 1.1rem; 
+      }
+    }
+  }
 }
 
-// CONTENT SPACING
-.intro-section {
-  padding: 80px 20px;
-  text-align: center;
-  .container { max-width: 800px; margin: 0 auto; }
-  h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: $brand-green; }
-  p { font-size: 1.15rem; line-height: 1.8; color: #555; }
-}
-
-.final-cta {
-  background-color: $brand-green;
-  padding: 80px 20px;
-  color: #ffffff;
-  
-  .container {
+/* Amenities Grid Styling */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
     max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-  }
 
-  .cta-content {
-    flex: 2;
-    h2 { 
-      font-family: 'Playfair Display', serif; 
-      font-size: 2.5rem; 
-      margin-bottom: 10px; 
-    }
-    p { 
-      font-size: 1.2rem; 
-      opacity: 0.9; 
-    }
-  }
-
-  .cta-actions {
-    flex: 1;
-    text-align: right;
-  }
-}
-
-// Larger Button specifically for the CTA
-.btn-gold-large {
-  display: inline-block;
-  background-color: $brand-gold;
-  color: white;
-  padding: 20px 45px;
-  text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  border-radius: 2px;
-
-  &:hover {
-    opacity: 0.9;
-    transform: scale(1.05); // Grows slightly when hovered
-  }
-}
-
-// Mobile Responsive adjustment
-@media (max-width: 768px) {
-  .final-cta .container {
-    flex-direction: column;
-    text-align: center;
-    .cta-actions { text-align: center; }
-  }
-}
-
-.text-center {
-    text-align: center;
-    max-width: 800px;
-    margin: 40px auto;
-}
-
-/* Evergreen Business CTA Styles */
-.footer-cta-section {
-    background-color: $brand-green;
-    padding: 100px 20px; /* Increased padding for a more premium feel */
-    text-align: center;
-    color: $pure-white;
-}
-
-.footer-cta-heading {
-    font-family: $serif-font;
-    color: $brand-gold;
-    font-size: 2.8rem; /* Slightly larger for emphasis */
-    margin: 0 0 20px 0;
-}
-
-.footer-cta-button {
-    display: inline-block;
-    background-color: $brand-gold;
-    color: $pure-white !important;
-    padding: 20px 45px;
-    text-decoration: none;
-    font-family: $sans-font;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    border-radius: 2px;
-
-    &:hover {
-        opacity: 0.9;
-        transform: scale(1.03); /* Subtle scale for a modern touch */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-}
-
-
-// RAVES / TESTIMONIALS STYLING
-.raves-section {
-  padding: 80px 20px;
-  background-color: $pure-white; // Keeps the review area clean
-  
-  .section-title {
-    font-family: $serif-font;
-    color: $brand-green; // Changed from default to your brand forest green
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-  }
-}
-
-.testimonial-card {
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  text-align: center;
-  border-bottom: 1px solid rgba($brand-gold, 0.3); // Subtle gold divider
-  padding-bottom: 40px;
-
-  blockquote {
-    font-family: $serif-font;
-    font-style: italic;
-    font-size: 1.4rem;
-    color: #444; // Darker gray for readability
-    line-height: 1.6;
-    margin-bottom: 20px;
-    
-    &::before {
-      content: "“";
-      color: $brand-gold; // Gold quote marks
-      font-size: 3rem;
-      display: block;
-      margin-bottom: -20px;
-    }
-  }
-
-  cite {
-    font-family: $sans-font;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: $brand-gold; // Couple names in your signature gold
-    font-style: normal;
-  }
-}
-
-.section-title {
-    font-family: $serif-font;
-    color: $brand-green; // This uses #54787c
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.testimonial-card cite {
-    color: $brand-gold; // This uses #b59a5d
-}
-
-// Standard Green Header for Subpages
-.page-header-banner {
-    background-color: $brand-green;
-    border-bottom: 4px solid $brand-gold;
-    padding: 60px 20px;
-    text-align: center;
-    color: $pure-white;
-
-    h1 {
-        font-family: $serif-font;
-        font-size: 3rem;
-        margin: 0;
-        color: $pure-white;
-        text-transform: capitalize;
+    ul { 
+        display: contents; // Allows the <li> to become direct children of the grid
+        list-style: none; 
     }
     
-    p {
-        font-family: $sans-font;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 0.9rem;
-        margin-top: 10px;
-        opacity: 0.9;
+    li { 
+        background: rgba(255, 255, 255, 0.08); 
+        padding: 25px; 
+        border-radius: 4px;
+        border-left: 3px solid $brand-gold;
+        line-height: 1.6;
+
+        strong { 
+            color: $brand-gold; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 1.1rem;
+            font-family: $serif-font;
+        }
     }
 }

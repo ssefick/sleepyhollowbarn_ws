@@ -3,12 +3,35 @@ email: info@sleepyhollowbarn.com
 description: >-
   A historic 44-acre barn and wedding venue in Clemson, S.C. 
   Experience the charm of the J.C. Stribling Barn and lush Wedding Green.
+
+# IMPORTANT: Ensure 'url' matches exactly how you want to appear in Google
 baseurl: "" 
 url: "https://www.sleepyhollowbarn.com"
+
+# Business Data for Google Indexing (SEO Tag support)
+venue:
+  name: "Sleepy Hollow Barn & Plantation"
+  address: "220 Issaqueena Trail"
+  city: "Clemson"
+  state: "SC"
+  zip: "29631"
+  phone: "864-207-1540"
+
 markdown: kramdown
 
 # Build settings
-##theme: minima
+# We are keeping your current plugins and adding jekyll-sitemap for auto-generation
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Technical Exclusions
+# This prevents Google from trying to index your raw code files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

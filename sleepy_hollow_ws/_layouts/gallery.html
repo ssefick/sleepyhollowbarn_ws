@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="gallery-page" style="padding: 60px 20px; background-color: #fcfbf8;">
+<section class="gallery-page" style="padding: 60px 20px;">
   <div class="container" style="max-width: 1200px; margin: 0 auto;">
     
     <header style="text-align: center; margin-bottom: 60px;">
@@ -10,41 +10,40 @@ layout: default
       <p style="font-style: italic; color: #777; font-size: 1.2rem;">{{ page.subheading }}</p>
     </header>
 
-    <div class="gallery-category" style="margin-bottom: 80px;">
-      <h2 style="font-family: 'Playfair Display', serif; color: #233123;">The J.C. Stribling Barn</h2>
-      <p style="max-width: 800px; margin-bottom: 30px; line-height: 1.6; color: #555;">{{ page.barn_desc }}</p>
-      <div class="gallery-masonry">
-        {% for file in site.static_files %}
-          {% if file.path contains '/assets/gallery_photos/barn/' %}
-            <div class="gallery-brick"><img src="{{ file.path | relative_url }}" alt="J.C. Stribling Barn Interior"></div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
+    {% assign categories = "barn,green,grounds" | split: "," %}
+    {% assign titles = "The J.C. Stribling Barn,The Wedding Green,The Grounds" | split: "," %}
 
+    {% for category in categories %}
     <div class="gallery-category" style="margin-bottom: 80px;">
-      <h2 style="font-family: 'Playfair Display', serif; color: #233123;">The Wedding Green</h2>
-      <p style="max-width: 800px; margin-bottom: 30px; line-height: 1.6; color: #555;">{{ page.green_desc }}</p>
-      <div class="gallery-masonry">
-        {% for file in site.static_files %}
-          {% if file.path contains '/assets/gallery_photos/green/' %}
-            <div class="gallery-brick"><img src="{{ file.path | relative_url }}" alt="Outdoor Wedding Green at Sleepy Hollow"></div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
+      <h2 style="font-family: 'Playfair Display', serif; border-bottom: 2px solid #b59a5d; display: inline-block; margin-bottom: 10px;">{{ titles[forloop.index0] }}</h2>
+      
+      {% assign desc_key = category | append: "_desc" %}
+      <p style="margin-bottom: 30px; color: #555; line-height: 1.6; max-width: 850px;">
+        {{ page[desc_key] }}
+      </p>
 
-    <div class="gallery-category" style="margin-bottom: 80px;">
-      <h2 style="font-family: 'Playfair Display', serif; color: #233123;">The Grounds</h2>
-      <p style="max-width: 800px; margin-bottom: 30px; line-height: 1.6; color: #555;">{{ page.grounds_desc }}</p>
       <div class="gallery-masonry">
         {% for file in site.static_files %}
-          {% if file.path contains '/assets/gallery_photos/grounds/' %}
-          <div class="gallery-brick"><img src="{{ file.path | relative_url }}" alt="Sleepy Hollow Farm Grounds"></div>
-          {% endif %}
-          {% endfor %}
+          {% if file.path contains '/assets/gallery_photos/' and file.path contains category %}
+            {% assign img_id = file.name | slugify | append: forloop.index %}
+            <div class="gallery-brick">
+              <a href="#{{ img_id }}" class="gallery-link">
+                <img src="{{ file.path | relative_url }}" alt="Venue Photo" style="width: 100%; border-radius: 2px;">
+              </a>
+
+              <div id="{{ img_id }}" class="custom-lightbox">
+                <a href="#close" class="lightbox-bg"></a>
+                <div class="lightbox-content">
+                  <img src="{{ file.path | relative_url }}" alt="Full size">
+                  <a href="#close" class="close-x-btn">&times;</a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
       </div>
     </div>
+    {% endfor %}
 
   </div>
 </section>
@@ -52,9 +51,31 @@ layout: default
 <style>
  .gallery-masonry { column-count: 3; column-gap: 15px; }
  .gallery-brick { margin-bottom: 15px; break-inside: avoid; }
- .gallery-brick img { width: 100%; border-radius: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
- h2 { border-bottom: 2px solid #b59a5d; display: inline-block; margin-bottom: 15px; }
- 
  @media (max-width: 900px) { .gallery-masonry { column-count: 2; } }
  @media (max-width: 600px) { .gallery-masonry { column-count: 1; } }
+
+ /* Lightbox Logic */
+ .custom-lightbox {
+     display: none;
+     position: fixed;
+     top: 0; left: 0;
+     width: 100%; height: 100%;
+     background: rgba(0,0,0,0.9);
+     z-index: 100000;
+     justify-content: center;
+     align-items: center;
+ }
+ .custom-lightbox:target { display: flex; }
+ .lightbox-bg { position: absolute; width: 100%; height: 100%; cursor: default; }
+ .lightbox-content { position: relative; max-width: 90%; max-height: 90%; }
+ .lightbox-content img { max-width: 100%; max-height: 85vh; border: 3px solid #fff; }
+ 
+ .close-x-btn {
+     position: absolute;
+     top: -60px; right: 0;
+     color: white;
+     font-size: 50px;
+     text-decoration: none;
+     font-family: Arial, sans-serif;
+ }
 </style>

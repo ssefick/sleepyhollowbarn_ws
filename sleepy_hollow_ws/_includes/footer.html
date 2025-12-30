@@ -3,5 +3,19 @@
         <h2>{{ site.data.venue.name }}</h2>
         <p>{{ site.data.venue.address }}</p>
         <p class="footer-phone">{{ site.data.venue.phone }}</p>
+        
+        <div class="social-links">
+            {% if site.data.venue.social.facebook %}
+            <a href="{{ site.data.venue.social.facebook }}" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            {% endif %}
+            
+            {% if site.data.venue.social.instagram %}
+            <a href="{{ site.data.venue.social.instagram }}" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            {% endif %}
+        </div>
     </div>
 </footer>
