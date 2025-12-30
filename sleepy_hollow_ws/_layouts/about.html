@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<section class="hero-section" style="height: 50vh; min-height: 400px;">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1 style="font-size: 3.5rem;">{{ page.heading }}</h1>
+      <p style="font-size: 1.2rem; font-style: italic; color: $brand-gold;">{{ page.subheading }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="history-content" style="padding: 100px 20px; background-color: #fcfbf8;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto;">
+    
+    <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; margin-bottom: 100px;">
+      <div style="flex: 1; min-width: 320px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">{{ page.chapter1_title }}</h2>
+        <div style="line-height: 1.8; color: #555;">{{ page.chapter1_text | markdownify }}</div>
+      </div>
+      <div style="flex: 1; min-width: 320px;">
+        <img src="{{ page.chapter1_img }}" style="width: 100%; border-radius: 2px; box-shadow: 20px 20px 0 $brand-gold;">
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap-reverse; margin-bottom: 100px;">
+      <div style="flex: 1; min-width: 320px;">
+        <img src="{{ page.chapter2_img }}" style="width: 100%; border-radius: 2px; box-shadow: -20px 20px 0 $brand-green;">
+      </div>
+      <div style="flex: 1; min-width: 320px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">{{ page.chapter2_title }}</h2>
+        <div style="line-height: 1.8; color: #555;">{{ page.chapter2_text | markdownify }}</div>
+      </div>
+    </div>
+
+  </div>
+</section>

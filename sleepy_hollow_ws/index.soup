@@ -1,0 +1,39 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero-section">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Historic Charm in the Heart of Clemson</h1>
+      <p>The J.C. Stribling Barn - A National Historic Landmark</p>
+      <a href="/contact" class="btn-gold">Book Your Tour</a>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <h2>Where History Meets Your Story</h2>
+    <p>
+      Located on a 44-acre working farm, Sleepy Hollow offers a unique blend of 
+      rustic elegance and Southern hospitality. Our centerpiece, the 1890s 
+      J.C. Stribling Barn, provides a breathtaking backdrop for weddings, 
+      corporate events, and family gatherings.
+    </p>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to start your story at the Barn?</h2>
+      <p>Schedule a private tour of the grounds and the historic J.C. Stribling Barn today.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/contact" class="btn-gold-large">Inquire Now</a>
+    </div>
+  </div>
+</section>
+

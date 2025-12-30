@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<section class="contact-section" style="padding: 80px 20px; background: #fcfbf8;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; gap: 60px; flex-wrap: wrap;">
+    
+    <div class="contact-info" style="flex: 1;">
+      <h1 style="font-family: 'Playfair Display', serif; color: #233123;">{{ page.heading }}</h1>
+      <p>{{ page.subheading }}</p>
+      
+      <div style="margin-top: 30px;">
+        <strong>Address:</strong> <p>{{ page.address }}</p>
+        <strong>Phone:</strong> <p>{{ page.phone }}</p>
+      </div>
+    </div>
+
+    <div class="contact-form" style="flex: 1.5; background: #fff; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+      <form action="https://formspree.io/f/{{ page.formspree_id }}" method="POST">
+        <label style="display:block; margin-bottom: 5px; font-weight: bold;">Name</label>
+        <input type="text" name="name" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd;">
+        
+        <label style="display:block; margin-bottom: 5px; font-weight: bold;">Email</label>
+        <input type="email" name="email" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd;">
+        
+        <label style="display:block; margin-bottom: 5px; font-weight: bold;">Message</label>
+        <textarea name="message" rows="5" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd;"></textarea>
+        
+        <button type="submit" class="btn-gold-large" style="width: 100%; border:none; cursor:pointer;">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>

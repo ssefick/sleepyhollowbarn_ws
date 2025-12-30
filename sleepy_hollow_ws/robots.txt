@@ -1,0 +1,12 @@
+---
+layout: null
+---
+User-agent: *
+Allow: /
+
+# Exclude internal Jekyll folders
+Disallow: /_layouts/
+Disallow: /_includes/
+Disallow: /_data/
+
+Sitemap: https://sleepyhollowbarn.com/sitemap.xml

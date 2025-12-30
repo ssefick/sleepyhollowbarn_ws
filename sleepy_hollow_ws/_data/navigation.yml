@@ -1,0 +1,14 @@
+- title: "Home"
+  url: "/"
+- title: "History"
+  url: "/about"
+- title: "Gallery"
+  url: "/gallery"
+- title: "Pricing"
+  url: "/pricing"
+- title: "Raves"      # <--- Add this line
+  url: "/raves"      # <--- Ensure this matches your file's permalink
+- title: "Location"
+  url: "/location"
+- title: "Contact"
+  url: "/contact"

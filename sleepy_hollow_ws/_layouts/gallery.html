@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<section class="gallery-page" style="padding: 60px 20px; background-color: #fcfbf8;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <header style="text-align: center; margin-bottom: 60px;">
+      <h1 style="font-family: 'Playfair Display', serif; color: #233123; font-size: 3.5rem;">{{ page.heading }}</h1>
+      <p style="font-style: italic; color: #777; font-size: 1.2rem;">{{ page.subheading }}</p>
+    </header>
+
+    <div class="gallery-category" style="margin-bottom: 80px;">
+      <h2 style="font-family: 'Playfair Display', serif; color: #233123;">The J.C. Stribling Barn</h2>
+      <p style="max-width: 800px; margin-bottom: 30px; line-height: 1.6; color: #555;">{{ page.barn_desc }}</p>
+      <div class="gallery-masonry">
+        {% for file in site.static_files %}
+          {% if file.path contains '/assets/gallery_photos/barn/' %}
+            <div class="gallery-brick"><img src="{{ file.path | relative_url }}" alt="J.C. Stribling Barn Interior"></div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="gallery-category" style="margin-bottom: 80px;">
+      <h2 style="font-family: 'Playfair Display', serif; color: #233123;">The Wedding Green</h2>
+      <p style="max-width: 800px; margin-bottom: 30px; line-height: 1.6; color: #555;">{{ page.green_desc }}</p>
+      <div class="gallery-masonry">
+        {% for file in site.static_files %}
+          {% if file.path contains '/assets/gallery_photos/green/' %}
+            <div class="gallery-brick"><img src="{{ file.path | relative_url }}" alt="Outdoor Wedding Green at Sleepy Hollow"></div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="gallery-category" style="margin-bottom: 80px;">
+      <h2 style="font-family: 'Playfair Display', serif; color: #233123;">The Grounds</h2>
+      <p style="max-width: 800px; margin-bottom: 30px; line-height: 1.6; color: #555;">{{ page.grounds_desc }}</p>
+      <div class="gallery-masonry">
+        {% for file in site.static_files %}
+          {% if file.path contains '/assets/gallery_photos/grounds/' %}
+          <div class="gallery-brick"><img src="{{ file.path | relative_url }}" alt="Sleepy Hollow Farm Grounds"></div>
+          {% endif %}
+          {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+ .gallery-masonry { column-count: 3; column-gap: 15px; }
+ .gallery-brick { margin-bottom: 15px; break-inside: avoid; }
+ .gallery-brick img { width: 100%; border-radius: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+ h2 { border-bottom: 2px solid #b59a5d; display: inline-block; margin-bottom: 15px; }
+ 
+ @media (max-width: 900px) { .gallery-masonry { column-count: 2; } }
+ @media (max-width: 600px) { .gallery-masonry { column-count: 1; } }
+</style>

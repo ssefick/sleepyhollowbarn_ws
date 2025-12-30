@@ -1,0 +1,14 @@
+title: Sleepy Hollow Barn & Plantation
+email: info@sleepyhollowbarn.com
+description: >-
+  A historic 44-acre barn and wedding venue in Clemson, S.C. 
+  Experience the charm of the J.C. Stribling Barn and lush Wedding Green.
+baseurl: "" 
+url: "https://www.sleepyhollowbarn.com"
+markdown: kramdown
+
+# Build settings
+##theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

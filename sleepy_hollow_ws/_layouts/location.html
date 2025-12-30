@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<section class="location-hero" style="padding: 0; line-height: 0;">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.646870024344!2d-82.8251239!3d34.8398718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88585e5c7097782d%3A0xc3f1013444654992!2s220%20Issaqueena%20Trail%2C%20Clemson%2C%20SC%2029631!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<section style="background: $brand-green; color: #fff; padding: 40px 20px; text-align: center;">
+  <div class="container">
+    <h2 style="color: $brand-gold; font-family: 'Playfair Display', serif;">Visit Sleepy Hollow</h2>
+    <p style="font-size: 1.2rem; letter-spacing: 1px;">{{ page.address }}</p>
+  </div>
+</section>
+
+<section style="padding: 100px 20px; background: #fcfbf8;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto;">
+    
+    <div style="text-align: center; margin-bottom: 80px;">
+      <h3 style="font-size: 3rem; font-family: 'Playfair Display', serif;">Guest Accommodations</h3>
+      <p style="color: #666; max-width: 750px; margin: 20px auto; line-height: 1.6; font-size: 1.1rem;">{{ page.location_intro }}</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 60px;">
+      {% for category in page.places %}
+      <div class="location-category">
+        <h4 style="border-bottom: 2px solid $brand-gold; color: $brand-green; display: inline-block; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">{{ category.title }}</h4>
+        
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+          {% for item in category.list %}
+          <div class="hotel-card" style="border-left: 3px solid #eee; padding-left: 20px;">
+            <strong style="display: block; font-size: 1.2rem; color: #233123;">{{ item.name }}</strong>
+            <span style="display: block; color: $brand-gold; font-weight: bold; margin: 5px 0;">{{ item.phone }}</span>
+            <p style="font-size: 0.95rem; color: #777; margin: 0;">{{ item.desc }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<section class="hero-section" style="height: 35vh; min-height: 300px;">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1 style="font-size: 3.5rem;">{{ page.heading }}</h1>
+      <p style="font-size: 1.1rem; color: $brand-gold; text-transform: uppercase; letter-spacing: 2px;">{{ page.subheading }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-content" style="padding: 100px 20px; background-color: #fcfbf8;">
+  <div class="container" style="max-width: 1000px; margin: 0 auto;">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
+      {% for item in page.questions %}
+      <div class="faq-item" style="border-bottom: 1px solid #ddd; padding-bottom: 30px;">
+        <h3 style="color: $brand-green; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: flex-start;">
+          <span style="color: $brand-gold; margin-right: 15px; font-weight: bold;">Q.</span> 
+          {{ item.q }}
+        </h3>
+        <div style="padding-left: 35px; color: #666; line-height: 1.7;">
+          {{ item.a | markdownify }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div style="margin-top: 80px; text-align: center; border: 1px solid $brand-gold; padding: 40px; border-radius: 4px;">
+      <h3 style="margin-bottom: 10px;">Still have questions?</h3>
+      <p style="margin-bottom: 25px;">We are happy to provide more details about our policies and availability.</p>
+      <a href="/contact" class="btn-gold-large" style="display: inline-block; padding: 15px 40px; background: $brand-gold; color: #fff; text-decoration: none; border-radius: 2px;">Contact Us</a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,20 @@
+name: "Sleepy Hollow Barn & Plantation"
+phone: "(864) 207-1540"
+email: "info@sleepyhollowbarn.com"
+address: "220 Issaqueena Trail, Clemson, S.C. 29631"
+map_link: "https://goo.gl/maps/xyz" # Replace with actual Google Maps link
+capacity:
+  seated: 150
+  max: 300
+features:
+  - "4,000 sq. ft. Antique Brick Barn"
+  - "Lush Wedding Green & Courtyard"
+  - "Private Bridal Suite"
+  - "Historic J.C. Stribling Barn (Circa 1890)"
+social:
+  facebook: "sleepyhollowbarn"
+  instagram: "sleepyhollowbarn"
+logo: "/assets/img/Sleepy-Hollow-Barns-Mobile-Retina-Logo.webp"
+colors:
+  forest: "#54787c"
+  gold: "#b59a5d"
