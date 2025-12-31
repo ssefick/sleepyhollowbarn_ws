@@ -1,6 +1,10 @@
 ---
 layout: home
 title: Home
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 hero_title: "Historic Charm in the Heart of Clemson"
 hero_subtitle: "The J.C. Stribling Barn - A National Historic Landmark"
 intro_title: "Where History Meets Your Story"

@@ -1,32 +1,32 @@
 ---
 layout: default
 ---
-<section class="raves-page" style="padding: 60px 20px; background-color: #fcfbf8;">
-  <div class="container" style="max-width: 1200px; margin: 0 auto;">
-    
-    <header style="text-align: center; margin-bottom: 60px;">
-      <h1 style="font-family: 'Playfair Display', serif; color: #233123; font-size: 3.5rem;">{{ page.heading }}</h1>
-      <p style="font-style: italic; color: #777; font-size: 1.2rem;">{{ page.subheading }}</p>
-    </header>
 
-    <div style="max-width: 800px; margin: 0 auto;">
-      {% for rave in page.featured_raves %}
-      <div style="margin-bottom: 80px; text-align: center; border-bottom: 1px solid rgba(181, 154, 93, 0.2); padding-bottom: 40px;">
-        <blockquote style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; line-height: 1.6; color: #444; margin-bottom: 25px;">
-          "{{ rave.quote }}"
-        </blockquote>
-        <cite style="font-family: 'Lato', sans-serif; font-weight: 700; color: #b59a5d; text-transform: uppercase; letter-spacing: 2px; font-style: normal; font-size: 1.1rem;">
-          — {{ rave.author }}
-        </cite>
-      </div>
-      {% endfor %}
+<section class="page-header-banner">
+    <h1>{{ page.heading }}</h1>
+    <p>{{ page.subheading }}</p>
+</section>
 
-      <div style="text-align: center; margin-top: 40px;">
-          <a href="{{ page.google_review_url }}" target="_blank" class="btn-gold-large">
-              <i class="fab fa-google"></i> Read More Reviews on Google
-          </a>
-      </div>
+<section class="raves-section">
+    <div class="container about-container">
+        
+        <div class="faq-grid"> 
+            {% for rave in page.featured_raves %}
+            <div class="rave-card">
+                <span class="quote-mark">&ldquo;</span>
+                <p>
+                    {{ rave.quote }}
+                </p>
+                <h3>— {{ rave.author }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="raves-footer-cta">
+            <h3>Read More Stories</h3>
+            <p>See more reviews from our wonderful couples on Google.</p>
+            <a href="{{ page.google_review_url }}" target="_blank" class="btn-gold-large">View All Google Reviews</a>
+        </div>
+
     </div>
-
-  </div>
 </section>

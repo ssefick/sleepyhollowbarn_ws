@@ -1,6 +1,10 @@
 ---
 layout: raves
 title: Raves
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 permalink: /raves/
 heading: "Kind Words"
 subheading: "From our Sleepy Hollow Couples"

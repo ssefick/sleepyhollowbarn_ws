@@ -1,6 +1,10 @@
 ---
 layout: about
 title: History
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 heading: "Our Legacy"
 subheading: "A Century of Southern Craftsmanship"
 

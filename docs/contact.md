@@ -1,6 +1,10 @@
 ---
 layout: contact
 title: Contact
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 heading: "Plan Your Event"
 subheading: "We respond to all inquiries within 24 hours."
 address: "220 Issaqueena Trail, Clemson, S.C. 29631"

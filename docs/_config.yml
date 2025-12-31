@@ -5,8 +5,9 @@ description: >-
   Experience the charm of the J.C. Stribling Barn and lush Wedding Green.
 
 # IMPORTANT: Ensure 'url' matches exactly how you want to appear in Google
-baseurl: "" 
+baseurl: ""
 url: "https://www.sleepyhollowbarn.com"
+permalink: pretty
 
 # Business Data for Google Indexing (SEO Tag support)
 venue:
@@ -24,6 +25,12 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+# includes moves to _site for deployment
+include:
+  - google594c867cc28d6c00.html
+  - .htaccess
 
 # Technical Exclusions
 # This prevents Google from trying to index your raw code files

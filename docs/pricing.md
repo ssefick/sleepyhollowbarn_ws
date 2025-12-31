@@ -1,6 +1,10 @@
 ---
 layout: pricing
 title: Pricing & Packages
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 heading: "Investment & Packages"
 subheading: "Host your celebration at the historic J.C. Stribling Barn. We offer flexible rental options based on your timeline."
 packages:

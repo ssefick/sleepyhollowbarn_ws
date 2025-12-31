@@ -1,6 +1,10 @@
 ---
 layout: location
 title: Location & Lodging
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 permalink: /location/
 address: "220 Issaqueena Trail, Clemson, S.C. 29631"
 location_intro: "Sleepy Hollow is nestled in the heart of Clemson, just minutes from the University. For your traveling guests, there are many excellent lodging options ranging from boutique inns to trusted hotel chains."

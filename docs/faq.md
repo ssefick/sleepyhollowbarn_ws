@@ -1,6 +1,10 @@
 ---
 layout: faq
 title: FAQ
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 heading: "Common Questions"
 subheading: "Details for your planning"
 questions:

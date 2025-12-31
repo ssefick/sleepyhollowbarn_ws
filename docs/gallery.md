@@ -1,6 +1,10 @@
 ---
 layout: gallery
 title: Gallery
+sitemap:
+  lastmod: 2025-12-31
+  priority: 0.8
+  changefreq: monthly
 heading: "The Gallery"
 subheading: "Explore the different spaces of Sleepy Hollow"
 
