@@ -30,6 +30,7 @@ plugins:
 # includes moves to _site for deployment
 include:
   - google594c867cc28d6c00.html
+  - google239d8fa919d0b656.html
   - .htaccess
 
 # Technical Exclusions

@@ -1,0 +1,16 @@
+# 1. Force HTTPS (Keeps your site secure)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on [NC]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+# 2. Custom 404 Page
+ErrorDocument 404 /404.html
+
+# 3. Ensure trailing slashes for Pretty URLs
+# This ensures /pricing becomes /pricing/ so the folder is found
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
